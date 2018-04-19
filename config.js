@@ -39,7 +39,7 @@ const dbDetails = {
 };
 
 module.exports = {
-  appName: 'tube_train',
+  appName: 'Prerana',
 
   port: process.env.PRERANA_PORT,
 
