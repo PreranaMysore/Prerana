@@ -23,11 +23,30 @@ module.exports = {
         );
         return formatForWire ? this.formatErrorForWire(error) : error;
     },
+
     formatErrorForWire: function(PreranaError) {
         return _.omit(PreranaError, 'stack');
     },
-  resourceNotFound: function(formatForWire) {
-    const error = new PreranaError('Resource Not Found', responseCodes.ResourceNotFound, 'ResourceNotFound');
-    return formatForWire ? this.formatErrorForWire(error) : error;
-  },
+
+    resourceNotFound: function(formatForWire) {
+      const error = new PreranaError('Resource Not Found', responseCodes.ResourceNotFound, 'ResourceNotFound');
+      return formatForWire ? this.formatErrorForWire(error) : error;
+   },
+
+   emailAlreadyExist: function(formatForWire) {
+      const error = new PreranaError('Email Already Exists', responseCodes.Conflict, 'EmailAlreadyExist');
+      return formatForWire ? this.formatErrorForWire(error) : error;
+   },
+
+   invalidPassword: function(formatForWire) {
+      const error = new PreranaError('Invalid Password', responseCodes.Unauthorized, 'InvalidPassword');
+      return formatForWire ? this.formatErrorForWire(error) : error;
+   },
+
+   userNotFound: function(formatForWire) {
+      const error = new PreranaError(' User Not Found', responseCodes.Unauthorized, 'UserNotFound');
+      return formatForWire ? this.formatErrorForWire(error) : error;
+   }
+
+
 };

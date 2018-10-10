@@ -16,7 +16,7 @@ const requiredParams = [
   'PRERANA_MESSAGE_SENDER_ID'
 ];
 
-for (let i = 0; i < requiredParams.length; i++) {
+/*for (let i = 0; i < requiredParams.length; i++) {
   if (!_.has(process.env, requiredParams[i])) {
     console.log(
       'Error: environment variables have not been properly setup.',
@@ -27,23 +27,23 @@ for (let i = 0; i < requiredParams.length; i++) {
 
     throw new Error('Prerana Environment Variables Not Properly Set');
   }
-}
+}*/
 
 const dbDetails = {
-  apiKey: process.env.PRERANA_API_KEY,
-  authDomain: process.env.PRERANA_AUTH_DOMAIN,
-  databaseURL: process.env.PRERANA_DATABASE_URL,
-  projectId: process.env.PRERANA_PROJECT_ID,
-  storageBucket: process.env.PRERANA_STORAGE_BUCKET,
-  messagingSenderId: process.env.PRERANA_MESSAGE_SENDER_ID
+  apiKey: "AIzaSyAIl39ZgH8_mh9oT2c8jnvSq9Q7fiFaHzA",
+  authDomain: "prerana-9c42d.firebaseapp.com",
+  databaseURL: "https://prerana-9c42d.firebaseio.com",
+  projectId: "prerana-9c42d",
+  storageBucket: "prerana-9c42d.appspot.com",
+  messagingSenderId: "235613937046"
 };
 
 module.exports = {
   appName: 'Prerana',
 
-  port: process.env.PRERANA_PORT,
+  port: "3000",
 
-  mode: process.env.PRERANA_MODE,
+  mode: "dev",
 
   db_details: dbDetails,
 
